@@ -5,6 +5,7 @@ PImage life;
 PImage robot;
 PImage soldier;
 int robotDeep = floor(random(4)) + 1 ;
+int robotMove = floor(random(420));
 
 void setup() {
 	size(640, 480, P2D);
@@ -38,7 +39,5 @@ void draw() {
     image(life,105,5);
     
 //robot
-    image(robot,450,(robotDeep*80)+160);
-    
-
+    image(robot,450-robotMove,(robotDeep*80)+160);
 }
