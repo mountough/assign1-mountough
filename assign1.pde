@@ -4,6 +4,7 @@ PImage groundHog;
 PImage life;
 PImage robot;
 PImage soldier;
+int robotDeep = floor(random(4)) + 1 ;
 
 void setup() {
 	size(640, 480, P2D);
@@ -13,7 +14,7 @@ void setup() {
   life = loadImage("img/life.png");
   robot = loadImage("img/robot.png");
   soldier = loadImage("img/soldier.png");
-  
+
 }
 
 void draw() {
@@ -35,4 +36,9 @@ void draw() {
     image(life,5,5);
     image(life,55,5);
     image(life,105,5);
+    
+//robot
+    image(robot,450,(robotDeep*80)+160);
+    
+
 }
