@@ -5,8 +5,11 @@ PImage life;
 PImage robot;
 PImage soldier;
 int robotDeep = floor(random(3)) + 1 ;
+int robotMove = floor(random(400));
 int soilderDeep = floor(random(3)) + 1 ;
-int robotMove = floor(random(420));
+float soilderX = 50;
+float soilderXSpeed = 5;
+
 
 void setup() {
 	size(640, 480, P2D);
@@ -41,5 +44,7 @@ void draw() {
 //robot
     image(robot,450-robotMove,(robotDeep*80)+160);
 //soilder
-    image(soldier,50,(soilderDeep*80)+160);
+    soilderX += soilderXSpeed;
+    image(soldier,soilderX,(soilderDeep*80)+160);
+    soilderX %= 640;
 }
