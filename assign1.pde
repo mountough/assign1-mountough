@@ -7,9 +7,10 @@ PImage soldier;
 int robotDeep = floor(random(3)) + 1 ;
 int robotMove = floor(random(400));
 int soilderDeep = floor(random(3)) + 1 ;
-float soilderX = 50;
-float soilderXSpeed = 5;
-
+int laserX=510-robotMove;
+int soilderX = 50;
+int soilderXSpeed = 5;
+int lazerXSpeed = 10;
 
 void setup() {
 	size(640, 480, P2D);
@@ -41,10 +42,18 @@ void draw() {
     image(life,5,5);
     image(life,55,5);
     image(life,105,5);
+//laser
+    fill(240,10,10);
+    rect (laserX,(robotDeep*80)+190,40,5);
+    laserX=laserX-lazerXSpeed;
+    //if(laserX<=0)
+    //laserX=510-robotMove;
 //robot
-    image(robot,450-robotMove,(robotDeep*80)+160);
+    image(robot,480-robotMove,(robotDeep*80)+160);
 //soilder
     soilderX += soilderXSpeed;
     image(soldier,soilderX,(soilderDeep*80)+160);
     soilderX %= 640;
+
+    
 }
