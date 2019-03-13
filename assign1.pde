@@ -4,7 +4,8 @@ PImage groundHog;
 PImage life;
 PImage robot;
 PImage soldier;
-int robotDeep = floor(random(4)) + 1 ;
+int robotDeep = floor(random(3)) + 1 ;
+int soilderDeep = floor(random(3)) + 1 ;
 int robotMove = floor(random(420));
 
 void setup() {
@@ -37,7 +38,8 @@ void draw() {
     image(life,5,5);
     image(life,55,5);
     image(life,105,5);
-    
 //robot
     image(robot,450-robotMove,(robotDeep*80)+160);
+//soilder
+    image(soldier,50,(soilderDeep*80)+160);
 }
