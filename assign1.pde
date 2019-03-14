@@ -44,10 +44,10 @@ void draw() {
     image(life,105,5);
 //laser
     fill(240,10,10);
-    rect (laserX,(robotDeep*80)+190,40,5);
+    rect (laserX,(robotDeep*80)+195,40,5);
     laserX=laserX-lazerXSpeed;
-    //if(laserX<=0)
-    //laserX=510-robotMove;
+    if(laserX<=0)
+    laserX=510-robotMove;
 //robot
     image(robot,480-robotMove,(robotDeep*80)+160);
 //soilder
